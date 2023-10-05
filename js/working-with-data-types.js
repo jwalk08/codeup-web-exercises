@@ -105,6 +105,9 @@ let codeupWord = sample.substring(sampleStart, sampleEnd);
 console.log("codeup word is:" + codeupWord);
 
 
+
+
+
 let movie1 = "The little mermaid";
 let movie2 = "Brother Bear";
 let movie3 = "Hercules";
@@ -113,18 +116,43 @@ movie1 = 3;
 movie2 = 5;
 movie3 = 1;
 
-console.log((movie1 + movie2 + movie3) * 3);
+let totalCost= (movie1 + movie2 + movie3) * 3;
+console.log(`The total cost is: ${totalCost}`);
+totalCost.toString()
 
 
-let Google = hourlyRate = 300
-let Amazon = hourlyRate = 380
-let Facebook = hourlyRate = 350
 
-let googlePay = Google * 10;
-let amazonPay = Amazon * 6;
-let facebookPay = Facebook * 4;
+let GoogleHourlyRate = 400;
+let AmazonHourlyRate = 380;
+let FacebookHourlyRate = 350;
 
-console.log(googlePay + amazonPay + facebookPay);
+let googlePay =     GoogleHourlyRate * 10;
+let amazonPay = AmazonHourlyRate * 6;
+let facebookPay = FacebookHourlyRate * 4;
+
+let totalPay = googlePay + amazonPay + facebookPay;
+totalPay = totalPay.toLocaleString("en-US", { style: "currency", currency: "USD"});
+console.log(`The total pay is: ${totalPay}`);
+
+console.log("1" +  2);
+let test = "Hello Duck"
+console.log(test);
+
+let username = 'codeup';
+let password = 'notastrongpassword';
+
+// Check conditions and store results in boolean variables
+let isPasswordValid = password.length >= 5;  // Password must be at least 5 characters
+let doesNotIncludeUsername = !password.includes(username); // Password must not include the username
+let isUsernameValid = username.trim().length <= 20; // Username must be no more than 20 characters
+let noWhitespaceAtStartOrEnd = !username.startsWith(' ') && !username.endsWith(' ') && !password.startsWith(' ') && !password.endsWith(' ');
+
+// Display the results
+console.log("Password is valid:", isPasswordValid);
+console.log("Password does not include username:", doesNotIncludeUsername);
+console.log("Username is valid:", isUsernameValid);
+console.log("No whitespace at start or end:", noWhitespaceAtStartOrEnd);
+
 
 
 
