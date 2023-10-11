@@ -14,7 +14,7 @@ alert("Welcome to my Website!");
         userInput = prompt("What is your Amazon hourly rate?");
         let AmazonHourlyRate = (userInput);
         userInput = prompt("What is your Facebook hourly rate?")
-        let FacebookHourlyRate = (userInput);
+        let FacebookHourlyRate = (userIunput);
 
                       let googlePay = GoogleHourlyRate * 10;
                       let amazonPay = AmazonHourlyRate * 6;

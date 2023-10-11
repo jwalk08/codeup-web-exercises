@@ -9,6 +9,15 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 
+function sayHello(name) {
+    let result = `Hello, ${name}`
+    return result;
+}
+
+
+
+
+
 /**
  * TODO:
  * Call the function 'sayHello' and pass your name as a string literal argument.
@@ -16,6 +25,16 @@
  *
  * console.log 'helloMessage' to check your work
  */
+let message = sayHello("Jan");
+console.log(message)
+
+// function helloMessage(sayHello) {
+//     console.log()
+//
+// }
+
+
+
 
 /**
  * TODO:
@@ -45,6 +64,16 @@ const random = Math.floor((Math.random() * 3) + 1);
  * different result everytime you refresh the page if you are using the random
  * number)
  */
+
+function isTwo(number){
+    let result = number === 2
+isTwo(math.floor(random))
+    return result
+}
+
+
+
+
 
 /**
  * TODO:

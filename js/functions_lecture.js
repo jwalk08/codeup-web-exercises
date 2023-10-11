@@ -1,21 +1,25 @@
 
+//
+// function sayHello(usersFullName) {
+//     console.log(`Hello, ${usersFullName}`);
+//
+// }
+// sayHello("jan");
+//
+// function isCoding(name) {
+//     console.log(name)
+//
+// }
+//
+//
+// //arrow function
+// const sayHello = (usersFullName) => {
+//     console.log(`Hello, ${usersFullName}`);
+//
+//
+// }
+// sayHello("jan");
 
-function sayHello(usersFullName) {
-    console.log(`Hello, ${usersFullName}`);
+function parseInt(42) {
 
 }
-sayHello("jan");
-
-function isCoding(name) {
-    console.log(name)
-
-}
-
-
-//arrow function
-const sayHello = (usersFullName) => {
-    console.log(`Hello, ${usersFullName}`);
-
-
-}
-sayHello("jan");
