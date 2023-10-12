@@ -73,10 +73,5 @@ names.forEach(name => console.log(`My name is: ${name}`))
          *  > last([1, 2, 3, 4, 5]) // return 5
          */
 
-        const firstPlace = (array) => {
-            return array [0]
-        console.log(firstPlace(0))
-        }
-
 
     })();
