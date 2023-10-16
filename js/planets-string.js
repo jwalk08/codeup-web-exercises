@@ -13,7 +13,7 @@
     const planetsArray = planetsString.split(',');
     console.log(planetsArray);
 
-    planetsString = planetsArray.join(',');
+    planetsString = planetsArray.join('|');
     console.log(planetsString);
 
 
