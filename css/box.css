@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+.box {
+    display: inline-block;
+    min-height: 300px;
+    background-color: red;
+    border: 10px;
+    solid-color: black;
+    width: 1000px;
+    padding: 20px;
+    margin: 20px;
+}
+
+
+
+.child-box{
+    width: 100px;
+    height: 100px;
+    background-color: lightpink;
+}

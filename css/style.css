@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+.fancy-header {
+    color: forestgreen;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.my-header{
+    color: forestgreen;
+    text-decoration: underline;
+
+}
+
+.cute-header{
+
+    color: forestgreen;
+    text-decoration: underline;
+}
+
+.last-header{
+    color: forestgreen;
+    text-decoration: underline;
+}
+
+
+.container-page{
+
+
+
+}
+body {
+    background-color:lightpink;
+    background-image: url("");
+    background-size: cover;
+    background-repeat: ;
+    background-position: ;
+    font-family: sans-serif;
+}
+
+ul {
+    list-style: ;
+}
+
+tr {
+    font-size: 1.5rem;
+
+}
+a{
+    color: unset;
+}
+
+a:visited{
+    color: aqua;
+
+}
+
+a.hover {
+    color: blueviolet;
+
+}
+
+ img {
+    width: 400px;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+     object-position: center;
+
+}
+
+img {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

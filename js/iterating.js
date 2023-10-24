@@ -72,6 +72,57 @@ names.forEach(name => console.log(`My name is: ${name}`))
          *  > second([1, 2, 3, 4, 5]) // returns 2
          *  > last([1, 2, 3, 4, 5]) // return 5
          */
+const increment = (input) => {
+    input =parseFloat(input);
+            if (isNaN(input)) {
+                return false;
+            }
+            return input +1;
+
+}
+
+
+        const decrement = (input) => {
+            input =parseFloat(input);
+            if (isNaN(input)) {
+                return false;
+            }
+            return input -1;
+
+        }
+
+
+
+const getHighestNumber = (num1,num2,num3) => {
+    const highestNum = Math.max(num1,num2,num3)
+
+
+
+}
+const parseNumber = (input) => {
+    input = parseFloat(input);
+    if(isNaN())
+
+}
+
+
+const add = (num1,num2) => {
+    num1 = parseFloat(num1)
+    num2 = parseFloat(num2)
+    if (isNaN(num1)) || isNaN(num2)
+    return num1 +num2;
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
     })();
