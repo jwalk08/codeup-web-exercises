@@ -3,8 +3,13 @@ header.container {
 
 }
 
+body {
+    background-color: whitesmoke;
+
+}
+
 .button {
-    background-color: lightskyblue;
+    background-color: #A7F7F4;
     color: black;
     padding: 5px 5px;
     font-size: small;
@@ -24,14 +29,43 @@ header.container .column {
 
 main.container {
 
+
 }
 
 footer.container .row {
 
 }
 
+ul.nav-links {
+
+}
+
+header.container .row ul a {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: blue;
+}
+
+ul.nav-links a {
+
+    transition: all ease 0.3s;
+}
+
+
 .column.sub-section {
     font-style: italic;
+}
+
+footer.container {
+    flex-grow: 1;
+    justify-content: end;
+
+}
+
+footer.container .row {
+    padding: 20px;
+
 }
 
 @media screen and (max-width: 475px) {
