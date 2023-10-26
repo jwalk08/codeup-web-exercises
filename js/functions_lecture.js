@@ -19,7 +19,14 @@
 //
 // }
 // sayHello("jan");
-
-function parseInt(42) {
-
+function shuffle(array) {
+    let currentIndex = array.length,
+        randomIndex
 }
+
+const createPairs = (arr) => {
+  arr = shuffle(arr);
+  console.log(arr)
+};
+
+
