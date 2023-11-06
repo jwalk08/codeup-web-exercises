@@ -1,4 +1,6 @@
-* {box-sizing: border-box;}
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -7,9 +9,9 @@ body {
     font-family: Chalkboard, sans-serif;
 }
 
-h1{
+h1 {
     display: flex;
-    justify-content:center;
+    justify-content: center;
 }
 
 h2, h3 {
@@ -29,7 +31,9 @@ h2, h3 {
     display: flex;
 }
 
-.border {border: 2px solid black;}
+.border {
+    border: 2px solid black;
+}
 
 .card {
     width: 400px;
@@ -52,6 +56,7 @@ section:nth-of-type(1) {
     background: lightgreen;
     /* enter needed declarations here */
 }
+
 section:nth-of-type(1) div:last-child {
     flex-direction: row-reverse;
     align-self: flex-start;
