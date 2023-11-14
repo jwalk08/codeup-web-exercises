@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coffee App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="container mt-5">
+
+<h1 class="text-center mb-4">Coffee!</h1>
+
+<!-- Form for searching and filtering -->
+<form id="search-form" class="mb-3">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="coffee-search">Search by Name:</label>
+            <input type="text" id="coffee-search" class="form-control" name="coffee-search">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="roast-filter">Filter by Roast:</label>
+            <select id="roast-filter" class="form-control" name="roast-filter">
+                <option value="all">All Roasts</option>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <button type="submit" class="btn btn-primary btn-block">Search</button>
+        </div>
+    </div>
+</form>
+
+<!-- List of coffees displayed in divs -->
+<div id="coffees-list" class="row"></div>
+
+<!-- Form for adding new coffees -->
+<form id="add-coffee-form" class="mb-3">
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="new-coffee-name">Coffee Name:</label>
+            <input type="text" id="new-coffee-name" class="form-control" name="new-coffee-name" required>
+        </div>
+        <div class="form-group col-md-4">
+            <label for="new-coffee-roast">Coffee Roast:</label>
+            <select id="new-coffee-roast" class="form-control" name="new-coffee-roast" required>
+                <option value="light">Light</option>
+                <option value="medium">Medium</option>
+                <option value="dark">Dark</option>
+            </select>
+        </div>
+        <div class="form-group col-md-2">
+            <button type="submit" class="btn btn-success btn-block">Add Coffee</button>
+        </div>
+    </div>
+</form>
+
+<script src="script.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
