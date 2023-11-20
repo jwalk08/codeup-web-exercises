@@ -41,7 +41,7 @@ const users = [
     const threeLanguages = users.filter((user) => {
         return user.languages.length >= 3;
     });
-    console.log(threeLanguages);
+    console.log(threeLanguaj / ges);
 
     const userEmail = users.map((user) => {
         return user.email;
@@ -53,9 +53,9 @@ const users = [
     }, 0);
     console.log(totalYears);
 
-    const longestEmail = users.reduce((longest, user) => {
-        if (user.email.length >= longest.length) {
-            return user.email;
+    const longestEmail = users.reduce((longest, email) => {
+        if (user.email.length > longest.length) {
+            return user;
         } else {
             return longest;
         }
