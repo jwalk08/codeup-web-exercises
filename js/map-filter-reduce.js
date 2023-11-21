@@ -41,26 +41,45 @@ const users = [
     const threeLanguages = users.filter((user) => {
         return user.languages.length >= 3;
     });
-    console.log(threeLanguaj / ges);
+    console.log("User's with 3 or more  languages => ", threeLanguages);
+
 
     const userEmail = users.map((user) => {
         return user.email;
     });
     console.log(userEmail)
 
+
     const totalYears = users.reduce((total, user) => {
         return total + user.yearsOfExperience;
     }, 0);
-    console.log(totalYears);
+    console.log(totalYears); //35
 
-    const longestEmail = users.reduce((longest, email) => {
-        if (user.email.length > longest.length) {
+    const averageYear = users.reduce((acc, user, index) => {
+        if (index === users.length - 1) {
+            return (acc + user.yearsOfExperience) / users.length;
+        } else {
+            return acc + user.yearsOfExperience;
+        }
+    });
+    console.log(averageYear);//7
+
+
+    const longestEmail = users.reduce((accumulator, user) => {
+        if (user.email.length > accumulator.email.length) {
             return user;
         } else {
-            return longest;
+            return accumulator;
         }
     },);
+    users[0];
     console.log(longestEmail);
 
+
+    const instructors = users.reduce((accumulator, user, index) => {
+        const separator = index < users.length - 1 ? ', and ' : ', ';
+        return accumulator + user.name + separator;
+    });
+    console.log(instructors);
 
 })();

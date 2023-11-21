@@ -23,30 +23,27 @@
  */
 
 
+function analyzeColor() {
+    // Get user input for color
+    let color = prompt("Enter a color:");
 
-// function analyzeColor() {
-//     // Get user input for color
-//     let color = prompt("Enter a color:");
-//
-//     // Convert the user input to lowercase for case-insensitive comparison
-//     color = color.toLowerCase();
-//
-//     if (color === 'blue') {
-//         return "Blue is the color of the sky";
-//     } else if (color === 'red') {
-//         return "Strawberries are red";
-//     } else {
-//         return "I don't know anything about " + color;
-//     }
-// }
-// const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-// const randomColor = colors[Math.floor(Math.random() * colors.length)];
-// // Call the function to get user input and display the result
-//  let result = analyzeColor(randomColor);
-// console.log(result);
-//
+    // Convert the user input to lowercase for case-insensitive comparison
+    color = color.toLowerCase();
 
+    if (color === 'blue') {
+        return "Blue is the color of the sky";
+    } else if (color === 'red') {
+        return "Strawberries are red";
+    } else {
+        return "I don't know anything about " + color;
+    }
+}
 
+const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+const randomColor = colors[Math.floor(Math.random() * colors.length)];
+// Call the function to get user input and display the result
+let result = analyzeColor(randomColor);
+console.log(result);
 
 
 // Don't change the next two lines!
@@ -62,25 +59,20 @@
 //  */
 
 
-
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
-let analyzeColor= prompt("Enter color");
+let analyzeColor = prompt("Enter color");
 
 switch (analyzeColor.toLowerCase()) {
     case "pink":
-    alert("That is a pretty color.");
-    break;
+        alert("That is a pretty color.");
+        break;
     case "blue":
         console.log("Blue Like the sky.");
 
 }
-
-
-
-
 
 
 /**
@@ -89,6 +81,14 @@ switch (analyzeColor.toLowerCase()) {
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+
+const analyzeColor = (color) => `Analyzing color: ${color}`;
+const userColor = prompt('Enter a color:');
+const handleAnalysis = () => {
+    const analysisResult = analyzeColor(userColor);
+    alert(analysisResult);
+};
+handleAnalysis();
 
 /* ########################################################################## */
 
@@ -111,6 +111,35 @@ switch (analyzeColor.toLowerCase()) {
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(luckyNumber, totalAmount) {
+    switch (luckyNumber) {
+        case 0:
+
+            return totalAmount;
+        case 1:
+
+            return totalAmount - (0.1 * totalAmount);
+        case 2:
+
+            return totalAmount - (0.25 * totalAmount);
+        case 3:
+
+            return totalAmount - (0.35 * totalAmount);
+        case 4:
+
+            return totalAmount - (0.5 * totalAmount);
+        case 5:
+
+            return 0;
+        default:
+
+            return 'Invalid lucky number';
+    }
+}
+
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
 
 /**
  * TODO:
