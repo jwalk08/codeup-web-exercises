@@ -16,7 +16,7 @@ const getUserEvents = (username) => {
 //main
 
 (async () => {
-    getUserEvents('mdevine23').then((event) => {
+    getUserEvents('jwalk08').then((event) => {
         console.log(event[0]);
     });
 
