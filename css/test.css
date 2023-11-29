@@ -1,0 +1,15 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#current-weather-container,
+#forecast-container,
+#map-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+#map-container {
+    height: 400px;
+}
