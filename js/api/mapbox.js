@@ -13,3 +13,4 @@ export const getCoordinates = async (searchText) => {
     const data = await response.json();
     return data.features[0].center;
 };
+

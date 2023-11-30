@@ -2,10 +2,9 @@ import {getForecast} from './api/open-weather.js';
 import {getCoordinates} from './api/mapbox.js';
 import {keys} from './keys.js';
 
-
 const createCardElement = (forecast) => {
     const card = document.createElement('div');
-    card.classList.add('col', 'col-2');
+    card.classList.add('col', 'col-2', 'rounded');
     const date = new Date(forecast.dt * 1000);
     const options = {
         year: 'numeric',
@@ -18,7 +17,7 @@ const createCardElement = (forecast) => {
     };
     const formattedDate = date.toLocaleDateString("en-US", options);
     card.innerHTML = `
-        <div class="card">
+        <div class="tiltcard" data-tilt data-tilt-glare>
           <img src="http://openweathermap.org/img/w/${forecast.weather[0].icon}.png" class="card-img-top" alt="...">
           <p class="card-date">${formattedDate}</p>
           <div class="card-body">
@@ -36,8 +35,9 @@ const createCardElement = (forecast) => {
 }
 
 const updateCard = async (searchTerm, map) => {
-    const getDataMap = await getCoordinates(searchTerm);
-    const forecasts = await getForecast(51.5281798, -0.4312328);
+    const selectedArea = await getCoordinates(searchTerm);
+    console.log(selectedArea)
+    const forecasts = await getForecast(selectedArea[1], selectedArea[0]);
     const cardElement = document.querySelector('#card');
     cardElement.innerHTML = "";
 
@@ -51,7 +51,7 @@ const updateCard = async (searchTerm, map) => {
 }
 //main
 (async () => {
-    const getDataMap = await getCoordinates('Tower of London, London EC3N 4AB, United Kingdom');
+    const getDataMap = await getCoordinates('Philadelphia,PA');
     mapboxgl.accessToken = keys.mapbox;
     const map = new mapboxgl.Map({
         container: 'map',
@@ -59,11 +59,27 @@ const updateCard = async (searchTerm, map) => {
         center: getDataMap,
         zoom: 10
     });
+    const geocoder = new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        placeholder: 'Search for places in Philadelphia',
+        mapboxgl: mapboxgl
+    });
+    geocoder.on('result', async (e) => {
+        const selectedLocation = e.result;
+        const searchTerm = selectedLocation.text;
+        await updateCard(searchTerm, map);
+        marker.setLngLat(selectedLocation.center).addTo(map);
+        map.flyTo({
+            center: selectedLocation.center,
+            zoom: 10
+        });
+    });
+    map.addControl(geocoder);
     const marker = new mapboxgl.Marker({
         draggable: true
     })
         .setLngLat(getDataMap)
         .addTo(map);
-    updateCard("Tower of London, London EC3N 4AB, United Kingdom", map);
+    updateCard("Philadelphia,PA", map);
 
 })();
