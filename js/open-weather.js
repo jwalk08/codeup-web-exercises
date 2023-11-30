@@ -4,7 +4,8 @@ import {keys} from './keys.js';
 
 const createCardElement = (forecast) => {
     const card = document.createElement('div');
-    card.classList.add('col', 'col-2', 'rounded');
+    card.classList.add('col', 'col-2', 'rounded', getWeatherClass(forecast.weather[0].main.toLowerCase()));
+
     const date = new Date(forecast.dt * 1000);
     const options = {
         year: 'numeric',
@@ -31,9 +32,34 @@ const createCardElement = (forecast) => {
     `;
     const appendCard = document.querySelector('#card');
     appendCard.appendChild(card);
-
 }
+const getWeatherClass = (weatherCondition) => {
+    const videoElement = document.querySelector('#background-video');
+    const audioElement = document.getElementById('background-audio');
+    switch (weatherCondition) {
+        case 'clear':
+            videoElement.src = 'vid/clouds.mp4'
+            audioElement.src = 'audio/wind.mp3'
+            break;
+        case 'rain':
+            videoElement.src = 'vid/rain.mp4'
+            audioElement.src = 'audio/natural-thunder-113219.mp3'
+            break;
+        case 'snow':
+            videoElement.src = 'vid/snow1.mp4'
+            audioElement.src = 'audio/snow-rain-bird-chirping-19560.mp3'
+            break;
+        // Add more cases for other weather conditions
+        default:
+            videoElement.src = 'vid/clouds.mp4'
+            audioElement.src = 'audio/wind.mp3'
+            break;
+    }
+    videoElement.play();
+    audioElement.play();
 
+    return weatherCondition;
+};
 const updateCard = async (searchTerm, map) => {
     const selectedArea = await getCoordinates(searchTerm);
     console.log(selectedArea)

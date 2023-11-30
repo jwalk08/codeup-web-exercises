@@ -7,19 +7,17 @@
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
-
 }
 
 .navbar {
     border-radius: 40px;
     transition: transform 0.5s ease-in-out;
-
 }
 
 .navbar-brand {
     font-family: 'Bungee Shade', cursive;
     font-size: 4rem;
-    color: #b6d4fe;
+    color: lightsteelblue;
 }
 
 #map {
@@ -27,9 +25,7 @@
     min-width: 700px;
     z-index: 500;
     border-radius: 22px;
-
 }
-
 
 #background-video {
     width: 100%;
@@ -39,23 +35,17 @@
     top: 0;
     left: 0;
     z-index: -1;
-       opacity: 0.9;
-
-
 }
 
 .mapboxgl-ctrl-geocoder {
-    width: 500px; /* Adjust the width to your preference */
     margin: 700px auto; /* Center the input horizontally */
     font-size: 20px; /* Adjust the font size to your preference */
 }
-
 
 .card-date {
     /* Add your desired border color */
     padding: 5px; /* Add some padding for better appearance */
 }
-
 
 #card {;
     right: 60px;
@@ -76,14 +66,17 @@
     border: 2px solid rgba(255, 255, 255, 0.18);
     transition: transform 0.3s ease-in-out;
     font-size: 15px;
+    color: #bfd1ec;
+    font-weight: bolder;
 
 }
 
 
 .tiltcard:hover {
     background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    transform: rotate(0deg);
+    border: 3px solid rgba(255, 255, 255, 0.28);
+    transform: scale(1.1);
+    transition: transform 0.5s ease-in-out;
 }
 
 .tiltcard img {
@@ -103,8 +96,7 @@
 
 .navbar:hover {
     transform: scale(1.1);
-    transition: transform 0.5s:infinite;
+    transition: transform 0.5s ease-in-out;
 
 }
-
 
