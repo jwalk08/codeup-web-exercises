@@ -12,12 +12,16 @@
 .navbar {
     border-radius: 40px;
     transition: transform 0.5s ease-in-out;
+    text-shadow: 2px 2px 2px black;
+    margin-right: 4px;
+    text-align: center;
 }
 
 .navbar-brand {
     font-family: 'Bungee Shade', cursive;
     font-size: 4rem;
     color: lightsteelblue;
+    text-shadow: 2px 2px 2px black;
 }
 
 #map {
@@ -38,24 +42,22 @@
 }
 
 .mapboxgl-ctrl-geocoder {
-    margin: 700px auto; /* Center the input horizontally */
-    font-size: 20px; /* Adjust the font size to your preference */
+    margin: 700px auto;
+    font-size: 20px;
 }
 
 .card-date {
-    /* Add your desired border color */
-    padding: 5px; /* Add some padding for better appearance */
+    padding: 5px;
 }
 
 #card {;
     right: 60px;
-    z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+    z-index: 1000;
 }
 
 .rounded {
     border-radius: 55px;
 }
-
 
 .tiltcard {
     position: relative;
@@ -65,34 +67,30 @@
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
     border: 2px solid rgba(255, 255, 255, 0.18);
     transition: transform 0.3s ease-in-out;
-    font-size: 15px;
-    color: #bfd1ec;
+    font-size: 18px;
+    color: white;
     font-weight: bolder;
 
 }
 
-
 .tiltcard:hover {
     background: rgba(255, 255, 255, 0.45);
-    border: 3px solid rgba(255, 255, 255, 0.28);
+    border: 5px solid rgba(255, 255, 255, 0.28);
     transform: scale(1.1);
     transition: transform 0.5s ease-in-out;
 }
 
 .tiltcard img {
-    width: 110px; /* Adjust the width to your preference */
-    height: 150px; /* Adjust the height to your preference */
-    object-fit: contain; /* or "cover" depending on the desired behavior */
+    width: 200px;
+    height: 250px;
+    object-fit: contain;
     transition: transform 0.5s ease-in-out;
     z-index: 2000;
-
-
 }
 
 .tiltcard:hover img {
     transform: rotate(10deg);
 }
-
 
 .navbar:hover {
     transform: scale(1.1);
