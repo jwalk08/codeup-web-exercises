@@ -4,9 +4,8 @@ import {keys} from './keys.js';
 
 const createCardElement = (forecast) => {
     const card = document.createElement('div');
-    const weatherCondition = forecast.weather[0].main.toLowerCase();
-    const weatherDescription = forecast.weather[0].description.toLowerCase(); // Add this line
-    card.classList.add('col', 'col-2', 'rounded', getWeatherClass(weatherCondition, weatherDescription));
+    card.classList.add('col', 'col-2', 'rounded', getWeatherClass(forecast.weather[0].main.toLowerCase()));
+
     const date = new Date(forecast.dt * 1000);
     const options = {
         year: 'numeric',
@@ -20,7 +19,7 @@ const createCardElement = (forecast) => {
     const formattedDate = date.toLocaleDateString("en-US", options);
     card.innerHTML = `
         <div class="tiltcard" data-tilt data-tilt-glare>
-          <img src="icon/${forecast.weather[0].icon}.png" class="card-img-top" alt="...">
+          <img src="./icon/${forecast.weather[0].icon}.png" class="card-img-top" alt="...">
           <p class="card-date">${formattedDate}</p>
           <div class="card-body">
             <h6 class="card-title">${forecast.temp.day}°F / ${forecast.temp.eve}°F</h6>
@@ -34,8 +33,7 @@ const createCardElement = (forecast) => {
     const appendCard = document.querySelector('#card');
     appendCard.appendChild(card);
 }
-const getWeatherClass = (weatherCondition, weatherDescription) => {
-    console.log(weatherCondition)
+const getWeatherClass = (weatherCondition) => {
     const videoElement = document.querySelector('#background-video');
     const audioElement = document.getElementById('background-audio');
     switch (weatherCondition) {
@@ -55,24 +53,20 @@ const getWeatherClass = (weatherCondition, weatherDescription) => {
             videoElement.src = 'vid/snow1.mp4'
             audioElement.src = 'audio/snow-rain-bird-chirping-19560.mp3'
             break;
-        case 'light_rain':
-            videoElement.src = 'vid/light-rain.mp4'
-            audioElement.src = 'audio/snow-rain-bird-chirping-19560.mp3'
-            break;
+        // Add more cases for other weather conditions
         default:
-            videoElement.src = 'vid/clouds.mp4'
+            videoElement.src = 'vid/snow1.mp4'
             audioElement.src = 'audio/wind.mp3'
             break;
     }
-    videoElement.play().catch((error) => console.error('Error playing video:', error));
-    audioElement.play().catch((error) => console.error('Error playing audio:', error));
+    audioElement.play();
 
     return weatherCondition;
 };
 const updateCard = async (searchTerm, map) => {
     const selectedArea = await getCoordinates(searchTerm);
     console.log(selectedArea)
-    const forecasts = await getForecast(selectedArea[1], selectedArea[1]);
+    const forecasts = await getForecast(selectedArea[1], selectedArea[0]);
     const cardElement = document.querySelector('#card');
     cardElement.innerHTML = "";
 
